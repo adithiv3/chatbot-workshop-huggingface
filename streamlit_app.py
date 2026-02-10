@@ -2,15 +2,10 @@ import os
 os.environ["TIKTOKEN_CACHE_DIR"] = "/tmp"
 from typing import List, Optional
 import streamlit as st
-from llama_index.llms.gemini import Gemini
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.huggingface import HuggingFaceLLM
 from llama_index.llms.huggingface_api import HuggingFaceInferenceAPI
-
-
-from llama_index.embeddings.google_genai import GoogleGenAIEmbedding
-from google.genai.types import EmbedContentConfig
 
 import nltk
 
