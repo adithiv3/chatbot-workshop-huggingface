@@ -86,12 +86,12 @@ if st.session_state.messages[-1]["role"] != "assistant":
                 try:
                     st.write_stream(response_stream.response_gen)
                 except Exception as e: 
-                    st.error("We hit a bump - let's try again " + e)
+                    st.error("We hit a bump - let's try again " + str(e))
                     try:
                         resp = st.session_state.chat_engine.chat(prompt)[0]
                         st.write(resp)
                     except Exception as e: 
-                        st.error("We got an error from Hugging Face - this can happen for a few different reasons. Consider asking the question in a different way. " + e)
+                        st.error("We got an error from Hugging Face - this can happen for a few different reasons. Consider asking the question in a different way. " + str(e))
             message = {"role": "assistant", "content": response_stream.response}
             # Add response to message history
             st.session_state.messages.append(message)
