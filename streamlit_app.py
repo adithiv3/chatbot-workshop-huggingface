@@ -13,15 +13,15 @@ import nltk
 def get_stopwords():
     nltk.download('stopwords')
 
-st.set_page_config(page_title="Chat with a friend on the works of Rabindranath Tagore", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
-st.title("Chat with a friend on the works of Rabindranath Tagore")
+st.set_page_config(page_title="Chat with a friend on the works of Adithi Vuligonda", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
+st.title("Chat with a friend on the works of Adithi Vuligonda")
 
 
 if "messages" not in st.session_state.keys():  # Initialize the chat messages history
     st.session_state.messages = [
         {
             "role": "assistant",
-            "content": "Ask me a question about Rabindranath Tagore!!",
+            "content": "Ask me a question about Adithi!!",
         }
     ]
 
@@ -48,7 +48,7 @@ def load_data():
     Answer the question using the provided documents, which contain relevant excerpts from the resume of Adithi Vuligonda.
     The context for all questions is the background and work of Adithi Vuligonda. Whenever possible, include a quotation from the provided excerpts of her resume to illustrate your point.
     Respond using a direct, straightforward tone, typical of a technical expert.
-    Respond in fewer than 70 words.""",
+    Respond in fewer than 60 words.""",
     )
     index = VectorStoreIndex.from_documents(docs)
     return index
